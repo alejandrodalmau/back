@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-6 offset-3">
             <h4>modificar novedad</h4>
-            <form action="/admin/novedades/modificar" method="post">
+            <form action="/admin/novedades/modificar" method="post" enctype="multipart/form-data">
                 <input type="hidden" value="{{novedad.id}}" name="id">
                 <div class="form-group">
                     <input type="text" placeholder="titulo" value="{{novedad.id}}" class="form-control" name="titulo">
@@ -16,6 +16,15 @@
                 <div class="form-group">
                     <textarea placeholder="novedad" class="form-control" name="novedad">{{novedad.novedad}}</textarea>
 
+                </div>
+                <div class="from-group">
+                    <p>
+                        <label > imagen: <input type="file" name="imagen" id="imagen"/></label>
+                    </p>
+                    <p>
+                        <label > <input type="checkbox" name="img_delete" id="img_delete" value="1">eliminar imagen actual</label>
+                        <input type="hidden" name="img_original" value="{{novedad.img_id}}">
+                    </p>
                 </div>
                 <button type="submit" class="btn btn-primary">modificar</button>
             </form>

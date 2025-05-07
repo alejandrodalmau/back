@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-6 offset-3">
             <h4>agregar una nueva novedad</h4>
-            <form action="/admin/novedades/agregar" method="post">
+            <form action="/admin/novedades/agregar" method="post" enctype="multipart/form-data">
             <div class="mb-3 row">
                 <input type="text"class="form-control" placeholder="titulo" name="titulo">
             </div>
@@ -12,6 +12,9 @@
             <div class="mb-3 row" >
                 <input type="text"class="form-control" placeholder="novedad" name="novedad" >
             </div>
+            <div class="mb-3 row">
+                <label >imagen: <input type="file" name="imagen" id="imagen"/></label>
+            </div>
             <button type="submit" class="btn btn-primary">guardar</button>
             </form>
             {{#if error}}
@@ -20,3 +23,7 @@
         </div>
     </div>
 </div>
+
+
+
+
